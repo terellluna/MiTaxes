@@ -21,3 +21,5 @@ response = requests.get(priceAPI, params=payload)
 
 # display price data
 response.json()
+
+print(response.json())
