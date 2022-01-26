@@ -25,9 +25,10 @@ transactionPayload = {
     "apikey": constants.API_KEY_ETHERSCAN,
 }
 
-
-blockResponse = requests.get(etherscanAPI, params=blockPayload)
 transactionResponse = requests.get(etherscanAPI, params=transactionPayload)
 
-print(transactionResponse.json())
-print(blockResponse.json())
+for trx in transactionResponse.json()["result"]:
+    if trx["to"] == constants.MY_PUBLIC_ADDRESS:
+        print(trx)
+
+# print(transactionResponse.json())
