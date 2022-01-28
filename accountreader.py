@@ -2,7 +2,7 @@ import requests
 import constants
 
 
-def getAccountDetails(publicAddress=constants.MY_PUBLIC_ADDRESS):
+def getTransactionDetails(publicAddress=constants.MY_PUBLIC_ADDRESS):
     TRANSACTION_PAYLOAD = {
         "module": "account",
         "action": "txlist",
