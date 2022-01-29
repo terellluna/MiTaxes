@@ -26,14 +26,9 @@ def calculateAccountIncome(usdTrxPrices):
 
 
 prices = pricefetcher.getEthPrices(2021).json()["result"]["86400"]
-# print(prices)
-# for price in prices:
-#     print(price)
 
 transactions = accountreader.getTransactionDetails(None).json()
-# for trx in transactions["result"]:
-#     if trx["to"] == constants.MY_PUBLIC_ADDRESS:
-#         print(trx)
+
 usdTrxPrices = calculateTransactionAmount(transactions, prices)
 
 print(f"Total Transaction Income: {calculateAccountIncome(usdTrxPrices)}")
