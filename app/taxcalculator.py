@@ -1,10 +1,11 @@
-import datetime
-import pricefetcher
-import accountreader
+from app import app, pricefetcher, accountreader
 import constants
 
 
-def calculateTransactionAmount(transactions, prices):
+@app.route("/getAccountTransactionsByYear/<account>/<year>")
+def calculateTransactionAmount(year, account):
+    transactions = accountreader.getTransactionDetails(account).json()
+    prices = pricefetcher.getEthPrices(year).json()["result"]["86400"]
     usdTrxPrices = []
     for trx in transactions["result"]:
         if trx["to"] == constants.MY_PUBLIC_ADDRESS:
@@ -18,17 +19,10 @@ def calculateTransactionAmount(transactions, prices):
     return usdTrxPrices
 
 
-def calculateAccountIncome(usdTrxPrices):
+@app.route("/getAccountIncomeByYear/<account>/<year>")
+def calculateAccountIncome(year, account):
+    usdTrxPrices = calculateTransactionAmount(year, account)
     total = 0.0
     for price in usdTrxPrices:
         total += price
-    return total
-
-
-prices = pricefetcher.getEthPrices(2021).json()["result"]["86400"]
-
-transactions = accountreader.getTransactionDetails(None).json()
-
-usdTrxPrices = calculateTransactionAmount(transactions, prices)
-
-print(f"Total Transaction Income: {calculateAccountIncome(usdTrxPrices)}")
+    return str(total)
