@@ -2,7 +2,7 @@ import requests
 import constants
 
 
-def getTransactionDetails(publicAddress=constants.MY_PUBLIC_ADDRESS):
+def getTransactionDetailsEth(publicAddress=constants.MY_PUBLIC_ADDRESS):
     TRANSACTION_PAYLOAD = {
         "module": "account",
         "action": "txlist",
@@ -16,3 +16,11 @@ def getTransactionDetails(publicAddress=constants.MY_PUBLIC_ADDRESS):
     }
 
     return requests.get(constants.ETHERSCAN_API, params=constants.TRANSACTION_PAYLOAD)
+
+
+def getTransactionDetailsErg(publicAddress=constants.MY_PUBLIC_ADDRESS_ERG):
+    TRANSACTION_PAYLOAD = {
+        "limit": "500",
+    }
+    erg_api = constants.ERG_TRANSACTIONS_API + publicAddress + "/transactions"
+    return requests.get(erg_api, params=TRANSACTION_PAYLOAD)
