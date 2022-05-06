@@ -2,11 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import About from './components/About';
+import CalculateTaxes from './components/CalculateTaxes';
+import Donate from './components/Donate'
 
 ReactDOM.render(
-  <Router>
-    <App/>
-  </Router>,
+  <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element = {<App/>}>
+        <Route exact path="/calculate-taxes" element = {<CalculateTaxes/>}/>
+        <Route exact path="/about" element = {<About/>}/>
+        <Route exact path="/donate" element = {<Donate/>}/>
+      </Route>
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );

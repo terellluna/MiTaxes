@@ -10,12 +10,20 @@ function NavBar(){
         <nav className="navbar">
             <div onClick={() => routeChange('/')} className = "brand">
                 <img />
-                <h1>MiTaxes</h1>
+                <h1>
+                    <a href="/">MiTaxes</a>
+                </h1>
             </div>
             <div className = "pages">
-                <h2 onClick={() => routeChange('/calculate-taxes')}>Calculate Taxes</h2>
-                <h2 onClick={() => routeChange('/about')}>About</h2>
-                <h2 onClick={() => routeChange('/donate')}>Donate</h2>
+                <h2 onClick={() => routeChange('/calculate-taxes')}>
+                    <a href="/calculate-taxes">Calculate Taxes</a>
+                </h2>
+                <h2 onClick={() => routeChange('/about')}>
+                    <a href="/about">About</a>
+                </h2>
+                <h2 onClick={() => routeChange('/donate')}>
+                    <a href="/donate">Donate</a>
+                </h2>
             </div>
         </nav>
     </>
