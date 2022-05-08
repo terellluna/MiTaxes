@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <main className='pageBase'>
+      <main className="pageBase">
         <Outlet/>
       </main>
     </>

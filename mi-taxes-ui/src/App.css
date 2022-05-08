@@ -6,7 +6,6 @@
   height: 4vh;
   width: 100vw;
   display: inline-flex;
-  margin-bottom: 0.5vh;
 }
 
 h1 {
@@ -25,6 +24,10 @@ h2 {
   margin-right: 40px;
   margin-top: auto;
   margin-bottom: auto;
+}
+h3{
+  text-align: center;
+  color:ivory;
 }
 
 img {
@@ -49,4 +52,65 @@ a:hover{
 
 .brand {
   display: flex;
+}
+
+.calcTaxForm{
+  display:grid;
+  grid-row: 3;
+  grid-column: 1;
+  width:30vw;
+  background-color: ivory;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:10px;
+  padding-right:10px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.pageBase{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:96vh;
+}
+
+.calcTaxSubmitButton{
+  width: min-content;
+}
+
+.calcTaxSubmit{
+  margin:auto;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.yearForm{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  margin:auto;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.addressForm{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  margin:auto;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.calcTaxContainer{
+  border:4px solid;
+  border-radius: 20px;
+  border-color: ivory;
+}
+
+
+input{
+  margin-left:auto;
 }
