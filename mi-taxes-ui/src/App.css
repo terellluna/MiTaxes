@@ -64,7 +64,7 @@ a:hover{
   padding-bottom:5px;
   padding-left:10px;
   padding-right:10px;
-  border-radius: 10px;
+  border-radius: 20px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
@@ -106,10 +106,9 @@ a:hover{
 
 .calcTaxContainer{
   border:4px solid;
-  border-radius: 20px;
+  border-radius: 30px;
   border-color: ivory;
 }
-
 
 input{
   margin-left:auto;

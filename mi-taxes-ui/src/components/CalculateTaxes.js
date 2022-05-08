@@ -32,7 +32,7 @@ const CalculateTaxes = () => {
             */}
             <div className="calcTaxContainer">
                 <h3 className="calcTaxHeader">
-                        Mining Income Tax
+                        ETH Mining Income Tax
                 </h3>
                 <div className="calcTaxForm">
                     
